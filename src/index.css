@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family:Cooll ;
+  src: url(/public/fonts/UcCo3FwrK3iLTcviYwY.woff2);
+}
+.cool{
+  font-family:Cooll,sans-serif;
+}
+
+@layer base {
+  :root,
+  html {
+    font-family: 'Cooll', system-ui, -apple-system, sans-serif;
+  }
+}
+

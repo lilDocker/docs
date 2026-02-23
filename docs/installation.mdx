@@ -1,0 +1,47 @@
+---
+title: "Installation"
+description: "How to install and set up Go on your system."
+---
+
+# Installation
+
+To start developing with Go, you need to install the Go toolchain on your local machine.
+
+## 1. Download Go
+
+Visit the [official Go download page](https://go.dev/dl/) to download the installer for your operating system.
+
+## 2. Platform Specific Instructions
+
+<Tabs items={['Windows', 'macOS', 'Linux']}>
+  <Tab>
+    ### Windows
+    1. Open the `.msi` file you downloaded.
+    2. Follow the prompts to install Go. By default, it installs to `C:\Go`.
+    3. The installer should automatically add the `C:\Go\bin` directory to your `PATH` environment variable.
+  </Tab>
+  <Tab>
+    ### macOS
+    1. Open the `.pkg` file you downloaded.
+    2. Follow the prompts to install Go. It is typically installed to `/usr/local/go`.
+    3. The installer should automatically add `/usr/local/go/bin` to your `PATH`.
+  </Tab>
+  <Tab>
+    ### Linux
+    1. Extract the archive into `/usr/local`:
+       ```bash
+       rm -rf /usr/local/go && tar -C /usr/local -xzf go1.2x.x.linux-amd64.tar.gz
+       ```
+    2. Add `/usr/local/go/bin` to your `PATH` by adding this line to your `~/.profile` or `~/.bashrc`:
+       ```bash
+       export PATH=$PATH:/usr/local/go/bin
+       ```
+  </Tab>
+</Tabs>
+
+## 3. Verify Installation
+
+After installation, open a new terminal window and run the following command to verify that Go is installed correctly:
+
+```bash
+go version
