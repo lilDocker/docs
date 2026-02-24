@@ -23,7 +23,6 @@ export default function Layout() {
     <div className="flex min-h-screen bg-white">
       {/* LEFT SIDEBAR */}
       <aside className="w-64 bg-slate-50 fixed h-full p-6 overflow-y-auto">
-        {/* Added mb-8 here to provide space below the entire header */}
         <div className="flex flex-row items-center gap-3 justify-start mb-8">
           <img className="w-10" src="/lilDocker.png" alt="logo" />
           <p className="text-lg font-medium">{APP_NAME}</p>
@@ -39,9 +38,11 @@ export default function Layout() {
 
       {/* MAIN CONTENT */}
       <main className="flex-1 ml-64 mr-72 px-12 pt-20 pb-40">
-        <div className="mx-auto  px-8 pt-10 pb-20 max-w-2xl">
-          <Outlet className="h-full" />
-          <DocsPagination className="group flex items-center pt-20 gap-3 border rounded-xl p-4 hover:bg-slate-500 transition" />
+        <div className="mx-auto px-8 pt-10 pb-20 max-w-2xl">
+          <div className="h-full">
+            <Outlet />
+          </div>
+          <DocsPagination className="mt-24 grid grid-cols-2 gap-6" />
         </div>
       </main>
 

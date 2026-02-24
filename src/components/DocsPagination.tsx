@@ -1,7 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { docsPages } from "../docs/docsOrder";
 
-export default function DocsPagination() {
+interface DocsPaginationProps {
+  className?: string;
+}
+
+export default function DocsPagination({ className }: DocsPaginationProps) {
   const location = useLocation();
 
   const currentIndex = docsPages.findIndex(
@@ -12,8 +16,7 @@ export default function DocsPagination() {
   const next = docsPages[currentIndex + 1];
 
   return (
-    <div className="mt-24 grid grid-cols-2 gap-6">
-      
+    <div className={className ?? "mt-24 grid grid-cols-2 gap-6"}>
       {/* PREVIOUS */}
       {prev ? (
         <Link
@@ -26,12 +29,8 @@ export default function DocsPagination() {
             </span>
 
             <div>
-              <p className="text-xs text-slate-400 mb-1">
-                Previous
-              </p>
-              <p className="font-semibold text-slate-500">
-                {prev.title}
-              </p>
+              <p className="text-xs text-slate-400 mb-1">Previous</p>
+              <p className="font-semibold text-slate-500">{prev.title}</p>
             </div>
           </div>
         </Link>
@@ -47,12 +46,8 @@ export default function DocsPagination() {
         >
           <div className="flex items-center justify-end gap-3">
             <div>
-              <p className="text-xs text-slate-400 mb-1">
-                Next
-              </p>
-              <p className="font-semibold text-slate-500">
-                {next.title}
-              </p>
+              <p className="text-xs text-slate-400 mb-1">Next</p>
+              <p className="font-semibold text-slate-500">{next.title}</p>
             </div>
 
             <span className="text-xl transition group-hover:translate-x-1">
